@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -672,7 +673,72 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEU-Mf-aRk">
+                                <rect key="frame" x="196" y="253" width="89" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bulletin Board" id="M2t-Dr-hNa">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <stackView autoresizesSubviews="NO" distribution="fill" orientation="vertical" alignment="leading" spacing="1" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" horizontalClippingResistancePriority="250" verticalClippingResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJb-ha-5oq">
+                                <rect key="frame" x="219" y="190" width="43" height="55"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5GI-f3-9Gd">
+                                        <rect key="frame" x="3" y="28" width="37" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="l4g-ac-LEM">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nQ8-bc-IPq">
+                                        <rect key="frame" x="3" y="10" width="37" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="xmN-pb-URU">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <edgeInsets key="edgeInsets" left="5" right="5" top="10" bottom="10"/>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63I-e5-QnR">
+                                <rect key="frame" x="413" y="222" width="65" height="32"/>
+                                <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jfn-tC-sEv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addMessageToStack:" target="XfG-lQ-9wD" id="XpC-am-39R"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQH-vm-ebP">
+                                <rect key="frame" x="371" y="200" width="107" height="32"/>
+                                <buttonCell key="cell" type="push" title="Remove All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9by-mT-rQn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeAllMessageFromStack:" target="XfG-lQ-9wD" id="xAU-N4-6X4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="addMessage" destination="63I-e5-QnR" id="FjQ-xw-jL8"/>
+                        <outlet property="messageBoard" destination="kJb-ha-5oq" id="qsn-tU-1lK"/>
+                        <outlet property="removeAllMessages" destination="TQH-vm-ebP" id="a3O-lY-WWE"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

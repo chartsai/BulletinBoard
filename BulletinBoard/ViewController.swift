@@ -16,12 +16,27 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    @IBOutlet weak var messageBoard: NSStackView!
+
+    @IBOutlet weak var addMessage: NSButton!
+    @IBAction func addMessageToStack(sender: NSButton) {
+        print("TODO: add function...")
+        let v: NSTextField = NSTextField(frame: NSRect(x: 200, y: 200, width: 200, height: 200))
+        v.stringValue = "aaa"
+        v.hidden = false
+        messageBoard.hidden = false
+        messageBoard.addView(v, inGravity: NSStackViewGravity.Center)
+        print("add view done...")
     }
 
-
+    @IBOutlet weak var removeAllMessages: NSButton!
+    @IBAction func removeAllMessageFromStack(sender: NSButton) {
+        for subview in messageBoard.subviews {
+            messageBoard.removeView(subview)
+        }
+    }
 }
 
+class MyView: NSView {
+
+}
