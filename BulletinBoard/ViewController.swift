@@ -21,18 +21,35 @@ class ViewController: NSViewController {
     @IBOutlet weak var addMessage: NSButton!
     @IBAction func addMessageToStack(sender: NSButton) {
         print("TODO: add function...")
+        addStringAsMessage("test...")
+        print("add view done...")
+    }
+
+    private func addStringAsMessage(str: String) {
         let v: NSTextField = NSTextField(frame: NSRect(x: 200, y: 200, width: 200, height: 200))
-        v.stringValue = "aaa"
+        v.stringValue = str
         v.hidden = false
         messageBoard.hidden = false
         messageBoard.addView(v, inGravity: NSStackViewGravity.Center)
-        print("add view done...")
+
+        // TODO: use DB module to add new message.
     }
 
     @IBOutlet weak var removeAllMessages: NSButton!
     @IBAction func removeAllMessageFromStack(sender: NSButton) {
         for subview in messageBoard.subviews {
             messageBoard.removeView(subview)
+        }
+
+        // TODO: use DB module to remove messages.
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+
+        let stringMessages = AdaptedDbManager.get()
+        for msg in stringMessages {
+            addStringAsMessage(msg)
         }
     }
 }

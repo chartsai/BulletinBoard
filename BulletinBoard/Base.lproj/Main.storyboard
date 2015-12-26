@@ -719,7 +719,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="addMessageToStack:" target="XfG-lQ-9wD" id="XpC-am-39R"/>
+                                    <action selector="addMessageToStack:" target="XfG-lQ-9wD" id="hoK-aF-i6F"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQH-vm-ebP">
