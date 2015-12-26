@@ -10,10 +10,15 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    lazy var dbManager: AdaptedDbManager = AdaptedDbManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let stringMessages = dbManager.get()
+        for msg in stringMessages {
+            addStringAsMessage(msg)
+        }
     }
 
     @IBOutlet weak var messageBoard: NSStackView!
@@ -31,8 +36,7 @@ class ViewController: NSViewController {
         v.hidden = false
         messageBoard.hidden = false
         messageBoard.addView(v, inGravity: NSStackViewGravity.Center)
-
-        // TODO: use DB module to add new message.
+        dbManager.add([str])
     }
 
     @IBOutlet weak var removeAllMessages: NSButton!
@@ -42,18 +46,6 @@ class ViewController: NSViewController {
         }
 
         // TODO: use DB module to remove messages.
-    }
-
-    var dbManager: AdaptedDbManager
-
-    required init?(coder: NSCoder) {
-        dbManager = AdaptedDbManager()
-        super.init(coder: coder)
-
-        let stringMessages = dbManager.get()
-        for msg in stringMessages {
-            addStringAsMessage(msg)
-        }
     }
 }
 
