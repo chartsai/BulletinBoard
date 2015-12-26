@@ -9,19 +9,22 @@
 import Cocoa
 
 public class AdaptedDbManager {
-    public static func get() -> [String] {
+    public func get() -> [String] {
         return NSUserDefaults.standardUserDefaults().valueForKey("MessageData") as? [String] ?? [String]()
     }
 
-    public static func put(data: [String]) {
+    public func put(data: [String]) {
         NSUserDefaults.standardUserDefaults().setValue(data, forKey: "MessageData")
     }
 
-    public static func add(data: [String]) {
+    public func add(data: [String]) {
         var oldData = get()
         oldData.appendContentsOf(data)
 
         put(oldData)
+    }
+
+    public func delete() {
     }
 }
 
