@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4917829B1C2EB916001E8230 /* AdaptedDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917829A1C2EB916001E8230 /* AdaptedDbManager.swift */; };
+		491782A11C2F0EA4001E8230 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491782A01C2F0EA4001E8230 /* Message.swift */; };
 		EDDED21B1C2EAD2A003F896F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */; };
 		EDDED21D1C2EAD2A003F896F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21C1C2EAD2A003F896F /* ViewController.swift */; };
 		EDDED2201C2EAD2A003F896F /* BulletinBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21E1C2EAD2A003F896F /* BulletinBoard.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		4917829A1C2EB916001E8230 /* AdaptedDbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdaptedDbManager.swift; path = Database/AdaptedDbManager.swift; sourceTree = "<group>"; };
+		491782A01C2F0EA4001E8230 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Database/Message.swift; sourceTree = "<group>"; };
 		EDDED2171C2EAD2A003F896F /* BulletinBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BulletinBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDDED21C1C2EAD2A003F896F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				4917829A1C2EB916001E8230 /* AdaptedDbManager.swift */,
+				491782A01C2F0EA4001E8230 /* Message.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			files = (
 				4917829B1C2EB916001E8230 /* AdaptedDbManager.swift in Sources */,
 				EDDED21D1C2EAD2A003F896F /* ViewController.swift in Sources */,
+				491782A11C2F0EA4001E8230 /* Message.swift in Sources */,
 				EDDED21B1C2EAD2A003F896F /* AppDelegate.swift in Sources */,
 				EDDED2201C2EAD2A003F896F /* BulletinBoard.xcdatamodeld in Sources */,
 			);

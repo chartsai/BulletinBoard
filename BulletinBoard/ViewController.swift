@@ -15,10 +15,10 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let stringMessages = dbManager.get()
-        for msg in stringMessages {
-            addStringAsMessage(msg)
-        }
+//        let stringMessages = dbManager.get()
+//        for msg in stringMessages {
+//            addStringAsMessage(msg)
+//        }
     }
 
     @IBOutlet weak var messageBoard: NSStackView!
@@ -36,7 +36,7 @@ class ViewController: NSViewController {
         v.hidden = false
         messageBoard.hidden = false
         messageBoard.addView(v, inGravity: NSStackViewGravity.Center)
-        dbManager.add([str])
+//        dbManager.add([str])
     }
 
     @IBOutlet weak var removeAllMessages: NSButton!

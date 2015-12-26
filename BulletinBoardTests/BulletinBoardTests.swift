@@ -37,13 +37,46 @@ class BulletinBoardTests: XCTestCase {
 
 
     func testGetPut() {
-        let dbManage = AdaptedDbManager()
-        dbManage.put(["First", "Second", "Third"])
-        var data = dbManage.get()
-        print(data);
+        let dbManager = AdaptedDbManager()
 
-        dbManage.add(["Fourth, Fifth"])
-        data = dbManage.get()
-        print(data)
+        let dictionaryList = [
+            "ID_001": [
+                "imageUrl" : "image_01",
+                "content"  : "content_01"
+            ],
+            "ID_002": [
+                "imageUrl" : "image_02",
+                "content"  : "content_02"
+            ],
+            "ID_003": [
+                "imageUrl" : "image_03",
+                "content"  : "content_03"
+            ]
+        ]
+        let messageList = Message.fromDictionary(dictionaryList)
+        print(messageList)
+
+        let keys = Array(messageList.keys)
+
+        for key in keys {
+            dbManager.put(key, content: messageList[key]!)
+        }
+        dbManager.save()
+        print("size : " + String(dbManager.getMessageSize()))
+
+        dbManager.sync()
+        print(dbManager.getAll())
+        print(dbManager.get("ID_001"))
+
+        dbManager.delete("ID_002")
+        print(dbManager.getAll())
+
+//        dbManage.put(["First", "Second", "Third"])
+//        var data = dbManage.get()
+//        print(data);
+//
+//        dbManage.add(["Fourth, Fifth"])
+//        data = dbManage.get()
+//        print(data)
     }
 }
