@@ -10,15 +10,18 @@ import Cocoa
 
 public class AdaptedDbManager {
     public static func get() -> [String] {
-        return NSUserDefaults.standardUserDefaults().objectForKey("MessageData") as? [String] ?? [String]()
+        return NSUserDefaults.standardUserDefaults().valueForKey("MessageData") as? [String] ?? [String]()
     }
 
     public static func put(data: [String]) {
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "MessageData")
+        NSUserDefaults.standardUserDefaults().setValue(data, forKey: "MessageData")
     }
 
-    //public func add(data: [String]) {
-    //    NSUserDefaults.standardUserDefaults().insertValue(data, inPropertyWithKey: "MessageData")
-    //}
+    public static func add(data: [String]) {
+        var oldData = get()
+        oldData.appendContentsOf(data)
+
+        put(oldData)
+    }
 }
 

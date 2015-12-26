@@ -38,8 +38,11 @@ class BulletinBoardTests: XCTestCase {
 
     func testGetPut() {
         AdaptedDbManager.put(["First", "Second", "Third"])
-        let data = AdaptedDbManager.get()
-
+        var data = AdaptedDbManager.get()
         print(data);
+
+        AdaptedDbManager.add(["Fourth, Fifth"])
+        data = AdaptedDbManager.get()
+        print(data)
     }
 }
