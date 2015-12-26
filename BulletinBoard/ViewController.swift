@@ -44,10 +44,13 @@ class ViewController: NSViewController {
         // TODO: use DB module to remove messages.
     }
 
+    var dbManager: AdaptedDbManager
+
     required init?(coder: NSCoder) {
+        dbManager = AdaptedDbManager()
         super.init(coder: coder)
 
-        let stringMessages = AdaptedDbManager.get()
+        let stringMessages = dbManager.get()
         for msg in stringMessages {
             addStringAsMessage(msg)
         }
