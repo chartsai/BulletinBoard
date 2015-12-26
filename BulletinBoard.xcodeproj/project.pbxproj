@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		4917829B1C2EB916001E8230 /* AdaptedDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917829A1C2EB916001E8230 /* AdaptedDbManager.swift */; };
 		491782A11C2F0EA4001E8230 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491782A01C2F0EA4001E8230 /* Message.swift */; };
+		C9ABB6161C2F4A0000487BB8 /* LabelCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ABB6111C2F4A0000487BB8 /* LabelCollectionViewItem.swift */; };
+		C9ABB6171C2F4A0000487BB8 /* LabelCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9ABB6121C2F4A0000487BB8 /* LabelCollectionViewItem.xib */; };
+		C9ABB6181C2F4A0000487BB8 /* LabelCollectionViewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ABB6131C2F4A0000487BB8 /* LabelCollectionViewItemView.swift */; };
+		C9ABB61A1C2F4A0000487BB8 /* MsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ABB6151C2F4A0000487BB8 /* MsgViewController.swift */; };
+		C9ABB61D1C2F4EE600487BB8 /* SingleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ABB61B1C2F4EE600487BB8 /* SingleItem.swift */; };
+		C9ABB61E1C2F4EE600487BB8 /* SingleItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9ABB61C1C2F4EE600487BB8 /* SingleItem.xib */; };
 		EDDED21B1C2EAD2A003F896F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */; };
 		EDDED21D1C2EAD2A003F896F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21C1C2EAD2A003F896F /* ViewController.swift */; };
 		EDDED2201C2EAD2A003F896F /* BulletinBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21E1C2EAD2A003F896F /* BulletinBoard.xcdatamodeld */; };
@@ -39,6 +45,12 @@
 /* Begin PBXFileReference section */
 		4917829A1C2EB916001E8230 /* AdaptedDbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdaptedDbManager.swift; path = Database/AdaptedDbManager.swift; sourceTree = "<group>"; };
 		491782A01C2F0EA4001E8230 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Database/Message.swift; sourceTree = "<group>"; };
+		C9ABB6111C2F4A0000487BB8 /* LabelCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelCollectionViewItem.swift; path = MsgCollection/LabelCollectionViewItem.swift; sourceTree = "<group>"; };
+		C9ABB6121C2F4A0000487BB8 /* LabelCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelCollectionViewItem.xib; path = MsgCollection/LabelCollectionViewItem.xib; sourceTree = "<group>"; };
+		C9ABB6131C2F4A0000487BB8 /* LabelCollectionViewItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelCollectionViewItemView.swift; path = MsgCollection/LabelCollectionViewItemView.swift; sourceTree = "<group>"; };
+		C9ABB6151C2F4A0000487BB8 /* MsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MsgViewController.swift; path = MsgCollection/MsgViewController.swift; sourceTree = "<group>"; };
+		C9ABB61B1C2F4EE600487BB8 /* SingleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleItem.swift; path = MsgCollection/SingleItem.swift; sourceTree = "<group>"; };
+		C9ABB61C1C2F4EE600487BB8 /* SingleItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SingleItem.xib; path = MsgCollection/SingleItem.xib; sourceTree = "<group>"; };
 		EDDED2171C2EAD2A003F896F /* BulletinBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BulletinBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDDED21C1C2EAD2A003F896F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +101,19 @@
 			name = Database;
 			sourceTree = "<group>";
 		};
+		C9ABB6101C2F49F300487BB8 /* MsgCollection */ = {
+			isa = PBXGroup;
+			children = (
+				C9ABB6131C2F4A0000487BB8 /* LabelCollectionViewItemView.swift */,
+				C9ABB6111C2F4A0000487BB8 /* LabelCollectionViewItem.swift */,
+				C9ABB6121C2F4A0000487BB8 /* LabelCollectionViewItem.xib */,
+				C9ABB61B1C2F4EE600487BB8 /* SingleItem.swift */,
+				C9ABB61C1C2F4EE600487BB8 /* SingleItem.xib */,
+				C9ABB6151C2F4A0000487BB8 /* MsgViewController.swift */,
+			);
+			name = MsgCollection;
+			sourceTree = "<group>";
+		};
 		EDDED20E1C2EAD2A003F896F = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +137,7 @@
 		EDDED2191C2EAD2A003F896F /* BulletinBoard */ = {
 			isa = PBXGroup;
 			children = (
+				C9ABB6101C2F49F300487BB8 /* MsgCollection */,
 				491782991C2EB889001E8230 /* Database */,
 				EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */,
 				EDDED21C1C2EAD2A003F896F /* ViewController.swift */,
@@ -248,7 +274,9 @@
 			files = (
 				EDDED2221C2EAD2A003F896F /* Assets.xcassets in Resources */,
 				EDDED2251C2EAD2A003F896F /* Main.storyboard in Resources */,
+				C9ABB6171C2F4A0000487BB8 /* LabelCollectionViewItem.xib in Resources */,
 				EDDED24D1C2EC2A8003F896F /* MessageView.xib in Resources */,
+				C9ABB61E1C2F4EE600487BB8 /* SingleItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,10 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ABB6161C2F4A0000487BB8 /* LabelCollectionViewItem.swift in Sources */,
 				4917829B1C2EB916001E8230 /* AdaptedDbManager.swift in Sources */,
+				C9ABB61D1C2F4EE600487BB8 /* SingleItem.swift in Sources */,
 				EDDED21D1C2EAD2A003F896F /* ViewController.swift in Sources */,
 				491782A11C2F0EA4001E8230 /* Message.swift in Sources */,
 				EDDED21B1C2EAD2A003F896F /* AppDelegate.swift in Sources */,
+				C9ABB61A1C2F4A0000487BB8 /* MsgViewController.swift in Sources */,
+				C9ABB6181C2F4A0000487BB8 /* LabelCollectionViewItemView.swift in Sources */,
 				EDDED2201C2EAD2A003F896F /* BulletinBoard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
