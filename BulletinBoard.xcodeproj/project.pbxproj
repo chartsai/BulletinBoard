@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4917829B1C2EB916001E8230 /* AdaptedDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917829A1C2EB916001E8230 /* AdaptedDbManager.swift */; };
 		EDDED21B1C2EAD2A003F896F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */; };
 		EDDED21D1C2EAD2A003F896F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21C1C2EAD2A003F896F /* ViewController.swift */; };
 		EDDED2201C2EAD2A003F896F /* BulletinBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21E1C2EAD2A003F896F /* BulletinBoard.xcdatamodeld */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4917829A1C2EB916001E8230 /* AdaptedDbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdaptedDbManager.swift; path = Database/AdaptedDbManager.swift; sourceTree = "<group>"; };
 		EDDED2171C2EAD2A003F896F /* BulletinBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BulletinBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDDED21C1C2EAD2A003F896F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491782991C2EB889001E8230 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				4917829A1C2EB916001E8230 /* AdaptedDbManager.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		EDDED20E1C2EAD2A003F896F = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		EDDED2191C2EAD2A003F896F /* BulletinBoard */ = {
 			isa = PBXGroup;
 			children = (
+				491782991C2EB889001E8230 /* Database */,
 				EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */,
 				EDDED21C1C2EAD2A003F896F /* ViewController.swift */,
 				EDDED2211C2EAD2A003F896F /* Assets.xcassets */,
@@ -255,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4917829B1C2EB916001E8230 /* AdaptedDbManager.swift in Sources */,
 				EDDED21D1C2EAD2A003F896F /* ViewController.swift in Sources */,
 				EDDED21B1C2EAD2A003F896F /* AppDelegate.swift in Sources */,
 				EDDED2201C2EAD2A003F896F /* BulletinBoard.xcdatamodeld in Sources */,
@@ -479,6 +491,7 @@
 				EDDED2411C2EAD2A003F896F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDDED2421C2EAD2A003F896F /* Build configuration list for PBXNativeTarget "BulletinBoardTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +500,7 @@
 				EDDED2441C2EAD2A003F896F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDDED2451C2EAD2A003F896F /* Build configuration list for PBXNativeTarget "BulletinBoardUITests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +509,7 @@
 				EDDED2471C2EAD2A003F896F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

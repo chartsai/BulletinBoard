@@ -24,6 +24,8 @@ class BulletinBoardTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        testGetPut()
     }
     
     func testPerformanceExample() {
@@ -32,5 +34,12 @@ class BulletinBoardTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
+
+    func testGetPut() {
+        AdaptedDbManager.put(["First", "Second", "Third"])
+        let data = AdaptedDbManager.get()
+
+        print(data);
+    }
 }
