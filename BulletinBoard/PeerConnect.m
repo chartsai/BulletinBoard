@@ -129,11 +129,14 @@
 
 - (void)receivedTranscript:(Transcript *)transcript
 {
-    // Add to table view data source and update on main thread
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self insertTranscript:transcript];
-        [_messageDelegate didReceiveTranscript:transcript];
-    });
+    if (transcript.direction==TRANSCRIPT_DIRECTION_RECEIVE)
+    {
+        // Add to table view data source and update on main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self insertTranscript:transcript];
+            [_messageDelegate didReceiveTranscript:transcript];
+        });
+    }
 }
 
 - (void)updateTranscript:(Transcript *)transcript
