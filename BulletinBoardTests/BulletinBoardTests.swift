@@ -59,7 +59,7 @@ class BulletinBoardTests: XCTestCase {
         let keys = Array(messageList.keys)
 
         for key in keys {
-            dbManager.put(key, content: messageList[key]!)
+            dbManager.put(messageList[key]!)
         }
         dbManager.save()
         print("size : " + String(dbManager.getMessageSize()))

@@ -37,6 +37,9 @@ public class Message: NSObject {
     public func getContent() -> String {
         return self.contentValue
     }
+    public func toString() -> String {
+        return contentValue + " " + imageUrlValue
+    }
 
     public static func toDictionary(list : [String: Message]) -> [String: [String: String]] {
         var dictionaryList = [String: [String: String]]()

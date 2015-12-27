@@ -12,6 +12,10 @@ public class AdaptedDbManager {
 
     var messageList = [String: Message]()
 
+    var Timestamp: String {
+        return String(NSDate().timeIntervalSince1970 * 1000)
+    }
+
     init() {
         let dictionaryList = (NSUserDefaults.standardUserDefaults().dictionaryForKey("MessageData") as? [String: [String: String]]) ?? [String: [String: String]]()
 
@@ -26,8 +30,8 @@ public class AdaptedDbManager {
         return messageList[key]!
     }
 
-    public func put(key: String, content: Message) {
-        messageList[key] = content
+    public func put(content: Message) {
+        messageList[Timestamp] = content
     }
 
     public func delete(key: String) {
