@@ -25,14 +25,15 @@ class MsgViewController: NSViewController, NSCollectionViewDataSource, Messaging
     }
 
     func collectionView(collectionView: NSCollectionView, itemForRepresentedObjectAtIndexPath indexPath: NSIndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItemWithIdentifier("SingleItem", forIndexPath: indexPath)
-        item.representedObject = ItemObject(message: messages[indexPath.item])
-        print("message \(messages[indexPath.item]) is locate at \(indexPath.item)")
+        let item: SingleItem = collectionView.makeItemWithIdentifier("SingleItem", forIndexPath: indexPath) as! SingleItem
+        item.contentLabel.stringValue = messages[indexPath.item].contentValue
+        // representedObject can keep to do other thing.
         return item
     }
 
     func recieveAdditionalMessage(message: Message) {
         dbManager.put(message)
+        dbManager.save()
 
         messages.append(message)
         currentMessageNumber += 1
@@ -56,6 +57,7 @@ class MsgViewController: NSViewController, NSCollectionViewDataSource, Messaging
         currentMessageNumber -= 1
 
         dbManager.delete(message)
+        dbManager.save()
 
         refreshMessageBoard()
     }

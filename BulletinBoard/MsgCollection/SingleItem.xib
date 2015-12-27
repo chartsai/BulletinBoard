@@ -28,7 +28,8 @@
         </customView>
         <customObject id="9yq-ga-B6q" customClass="SingleItem" customModule="BulletinBoard" customModuleProvider="target">
             <connections>
-                <outlet property="label" destination="2rw-jU-s37" id="uzz-bD-ej6"/>
+                <outlet property="contentLabel" destination="2rw-jU-s37" id="xP0-9W-3u2"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="33k-WR-7mU"/>
             </connections>
         </customObject>
     </objects>

@@ -8,18 +8,6 @@
 
 import Cocoa
 
-class ItemObject: NSObject {
-//    var title:String
-//    init(title:String) {
-//        self.title = title
-//    }
-    var message: Message
-
-    init(message: Message) {
-        self.message = message
-    }
-}
-
 class SingleItem: NSCollectionViewItem {
 
     override func viewDidLoad() {
@@ -28,9 +16,6 @@ class SingleItem: NSCollectionViewItem {
     }
 
     // MARK: properties
-    var itemObject:ItemObject? {
-        return representedObject as? ItemObject
-    }
 
     override var selected: Bool {
         didSet {
@@ -45,13 +30,16 @@ class SingleItem: NSCollectionViewItem {
 
     // MARK: outlets
 
-    @IBOutlet weak var label: NSTextField!
+    @IBOutlet weak var contentLabel: NSTextField!
 
+    var message: Message?
     // MARK: NSResponder
 
     override func mouseDown(theEvent: NSEvent) {
         if theEvent.clickCount == 2 {
-            print("Double click \(itemObject!.message)")
+            if let msg = message?.getContent() {
+                print("Double click \(msg)")
+            }
         } else {
             super.mouseDown(theEvent)
         }
