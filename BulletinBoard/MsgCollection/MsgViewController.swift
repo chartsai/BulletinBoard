@@ -26,7 +26,7 @@ class MsgViewController: NSViewController, NSCollectionViewDataSource, Messaging
 
     func collectionView(collectionView: NSCollectionView, itemForRepresentedObjectAtIndexPath indexPath: NSIndexPath) -> NSCollectionViewItem {
         let item: SingleItem = collectionView.makeItemWithIdentifier("SingleItem", forIndexPath: indexPath) as! SingleItem
-        item.contentLabel.stringValue = messages[indexPath.item].contentValue
+        item.contentTextView.string = messages[indexPath.item].contentValue
         // representedObject can keep to do other thing.
         return item
     }

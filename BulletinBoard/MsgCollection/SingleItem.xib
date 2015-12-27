@@ -12,23 +12,47 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="Hz6-mo-xeY" customClass="SingleItemView" customModule="BulletinBoard" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+        <customView wantsLayer="YES" id="Hz6-mo-xeY" customClass="SingleItemView" customModule="BulletinBoard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="623" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rw-jU-s37">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="xHl-Nu-uqX">
-                        <font key="font" metaFont="system" size="40"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MC-aM-OFl">
+                    <rect key="frame" x="11" y="13" width="600" height="275"/>
+                    <clipView key="contentView" ambiguous="YES" id="nyr-dh-jDJ">
+                        <rect key="frame" x="1" y="1" width="598" height="273"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView ambiguous="YES" importsGraphics="NO" horizontallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="RT3-yz-wXn">
+                                <rect key="frame" x="0.0" y="0.0" width="598" height="273"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.93795770386041466" green="0.95370015940665986" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="minSize" width="598" height="273"/>
+                                <size key="maxSize" width="598" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="598" height="273"/>
+                                <size key="maxSize" width="598" height="10000000"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9yq-ga-B6q" id="goW-qQ-Ne7"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="3WE-qg-EOa">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2A5-7s-16V">
+                        <rect key="frame" x="583" y="1" width="16" height="273"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
             </subviews>
+            <point key="canvasLocation" x="172.5" y="108"/>
         </customView>
         <customObject id="9yq-ga-B6q" customClass="SingleItem" customModule="BulletinBoard" customModuleProvider="target">
             <connections>
-                <outlet property="contentLabel" destination="2rw-jU-s37" id="xP0-9W-3u2"/>
+                <outlet property="contentTextView" destination="RT3-yz-wXn" id="FTA-1r-8ye"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="33k-WR-7mU"/>
             </connections>
         </customObject>

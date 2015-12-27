@@ -772,15 +772,18 @@
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuU-sV-H1c">
                                 <rect key="frame" x="0.0" y="0.0" width="1280" height="800"/>
-                                <clipView key="contentView" id="Bbh-kw-wzk">
+                                <clipView key="contentView" wantsLayer="YES" id="Bbh-kw-wzk">
                                     <rect key="frame" x="1" y="1" width="1278" height="798"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView id="S2i-6D-rr6">
+                                        <collectionView allowsEmptySelection="NO" id="S2i-6D-rr6">
                                             <rect key="frame" x="0.0" y="0.0" width="1278" height="798"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="wjW-tI-FVX">
-                                                <size key="itemSize" width="300" height="50"/>
+                                            <shadow key="shadow">
+                                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </shadow>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" id="RuI-St-Heo">
+                                                <size key="itemSize" width="400" height="400"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </collectionView>

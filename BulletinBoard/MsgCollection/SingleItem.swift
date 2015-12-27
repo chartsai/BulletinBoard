@@ -30,7 +30,7 @@ class SingleItem: NSCollectionViewItem {
 
     // MARK: outlets
 
-    @IBOutlet weak var contentLabel: NSTextField!
+    @IBOutlet var contentTextView: NSTextView!
 
     var message: Message?
     // MARK: NSResponder
