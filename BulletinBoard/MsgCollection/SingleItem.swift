@@ -9,10 +9,14 @@
 import Cocoa
 
 class ItemObject: NSObject {
-    var title:String
+//    var title:String
+    var message: Message
 
-    init(title:String) {
-        self.title = title
+//    init(title:String) {
+//        self.title = title
+//    }
+    init(message: Message) {
+        self.message = message
     }
 }
 
@@ -47,7 +51,7 @@ class SingleItem: NSCollectionViewItem {
 
     override func mouseDown(theEvent: NSEvent) {
         if theEvent.clickCount == 2 {
-            print("Double click \(itemObject!.title)")
+            print("Double click \(itemObject!.message)")
         } else {
             super.mouseDown(theEvent)
         }

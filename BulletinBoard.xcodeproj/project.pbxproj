@@ -16,6 +16,7 @@
 		C9ABB61D1C2F4EE600487BB8 /* SingleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ABB61B1C2F4EE600487BB8 /* SingleItem.swift */; };
 		C9ABB61E1C2F4EE600487BB8 /* SingleItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9ABB61C1C2F4EE600487BB8 /* SingleItem.xib */; };
 		ED3848A31C2F9304006F1396 /* PeerConnect in Resources */ = {isa = PBXBuildFile; fileRef = ED3848A21C2F9304006F1396 /* PeerConnect */; };
+		ED3848A81C2F9969006F1396 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3848A71C2F9969006F1396 /* MultipeerConnectivity.framework */; };
 		EDDED21B1C2EAD2A003F896F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */; };
 		EDDED21D1C2EAD2A003F896F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21C1C2EAD2A003F896F /* ViewController.swift */; };
 		EDDED2201C2EAD2A003F896F /* BulletinBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDDED21E1C2EAD2A003F896F /* BulletinBoard.xcdatamodeld */; };
@@ -53,6 +54,8 @@
 		C9ABB61B1C2F4EE600487BB8 /* SingleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleItem.swift; path = MsgCollection/SingleItem.swift; sourceTree = "<group>"; };
 		C9ABB61C1C2F4EE600487BB8 /* SingleItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SingleItem.xib; path = MsgCollection/SingleItem.xib; sourceTree = "<group>"; };
 		ED3848A21C2F9304006F1396 /* PeerConnect */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PeerConnect; sourceTree = "<group>"; };
+		ED3848A41C2F974B006F1396 /* BulletinBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BulletinBoard-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED3848A71C2F9969006F1396 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		EDDED2171C2EAD2A003F896F /* BulletinBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BulletinBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDED21A1C2EAD2A003F896F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDDED21C1C2EAD2A003F896F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3848A81C2F9969006F1396 /* MultipeerConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +123,7 @@
 		EDDED20E1C2EAD2A003F896F = {
 			isa = PBXGroup;
 			children = (
+				ED3848A71C2F9969006F1396 /* MultipeerConnectivity.framework */,
 				EDDED2191C2EAD2A003F896F /* BulletinBoard */,
 				EDDED22E1C2EAD2A003F896F /* BulletinBoardTests */,
 				EDDED2391C2EAD2A003F896F /* BulletinBoardUITests */,
@@ -149,6 +154,7 @@
 				EDDED2261C2EAD2A003F896F /* Info.plist */,
 				EDDED24C1C2EC2A8003F896F /* MessageView.xib */,
 				EDDED21E1C2EAD2A003F896F /* BulletinBoard.xcdatamodeld */,
+				ED3848A41C2F974B006F1396 /* BulletinBoard-Bridging-Header.h */,
 			);
 			path = BulletinBoard;
 			sourceTree = "<group>";
@@ -444,11 +450,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = BulletinBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.bulletinboard.ios.BulletinBoard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BulletinBoard/BulletinBoard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -456,11 +466,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BulletinBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.bulletinboard.ios.BulletinBoard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BulletinBoard/BulletinBoard-Bridging-Header.h";
 			};
 			name = Release;
 		};
