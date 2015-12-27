@@ -15,6 +15,13 @@ public class Message: NSObject {
     var imageUrlValue: String
     var contentValue: String
 
+    init(from: String, url: String, content: String) {
+        fromValue = from
+        imageUrlValue = url
+        contentValue = content
+        timeValue = getTimestampString()
+    }
+
     init(from: String, url: String, content: String, time: String) {
         fromValue = from
         imageUrlValue = url

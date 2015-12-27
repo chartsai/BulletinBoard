@@ -2,5 +2,5 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import <Foundation/Foundation.h>
-#import "PeerConnect/PeerConnect.h"
+#import "PeerConnect.h"
+#import "Transcript.h"

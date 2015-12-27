@@ -10,11 +10,11 @@ import Cocoa
 
 class ItemObject: NSObject {
 //    var title:String
-    var message: Message
-
 //    init(title:String) {
 //        self.title = title
 //    }
+    var message: Message
+
     init(message: Message) {
         self.message = message
     }

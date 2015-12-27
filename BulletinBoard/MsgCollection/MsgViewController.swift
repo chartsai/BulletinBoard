@@ -9,11 +9,11 @@
 import Foundation
 import AppKit
 import Cocoa
+import MultipeerConnectivity
 
-@objc class MsgViewController: NSViewController, NSCollectionViewDataSource, MessagingService {
+class MsgViewController: NSViewController, NSCollectionViewDataSource, MessagingService {
     @IBOutlet weak var collectionView: NSCollectionView!
 
-//    var strings = ["1", "2", "3", "4", "5", "6", "7"].sort()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,33 +21,71 @@ import Cocoa
     }
 
     func collectionView(collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return strings.count
-        return number
+        return currentMessageNumber
     }
 
     func collectionView(collectionView: NSCollectionView, itemForRepresentedObjectAtIndexPath indexPath: NSIndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItemWithIdentifier("SingleItem", forIndexPath: indexPath)
-//        item.representedObject = ItemObject(title: strings[indexPath.item])
         item.representedObject = ItemObject(message: messages[indexPath.item])
-//        print(strings[indexPath.item]);
-        print(messages[indexPath.item])
+        print("message \(messages[indexPath.item]) is locate at \(indexPath.item)")
         return item
     }
 
-    @objc func didReceiveTranscript(transcript: Transcript) {
+    func recieveAdditionalMessage(message: Message) {
+        dbManager.put(message)
+
+        messages.append(message)
+        currentMessageNumber += 1
+
+        refreshMessageBoard()
+    }
+
+    func tendToDeleteMessage(message: Message) {
+        var found = false
+        for index in 0...messages.count {
+            if messages[index] == message {
+                messages.removeAtIndex(index)
+                found = true
+                break
+            }
+        }
+
+        guard found == true else {
+            return
+        }
+        currentMessageNumber -= 1
+
+        dbManager.delete(message)
+
+        refreshMessageBoard()
+    }
+
+    func refreshMessageBoard() {
+        collectionView.reloadData()
+    }
+
+
+    func didReceiveTranscript(transcript: Transcript) {
         print(transcript.message)
+
+        let auther = transcript.peerID.displayName
+        let content = transcript.message
+        let url = transcript.imageUrl?.absoluteString ?? ""
+
+        let message = Message(from: auther, url: url, content: content)
+        recieveAdditionalMessage(message)
     }
 
     var dbManager: AdaptedDbManager = AdaptedDbManager()
     var peerConnect: PeerConnect
-    var number: Int
+    var currentMessageNumber: Int
     var messages: [Message]
 
     required init?(coder: NSCoder) {
         peerConnect = PeerConnect.init()
 
         let messageDic: [String: Message] = dbManager.getAll()
-        number = messageDic.count
+        currentMessageNumber = messageDic.count
         messages = Array(messageDic.values)
         super.init(coder: coder)
 
