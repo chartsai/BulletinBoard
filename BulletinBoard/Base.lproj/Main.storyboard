@@ -751,7 +751,7 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="6KA-Xv-akW">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="163" y="208" width="480" height="270"/>
+                        <rect key="contentRect" x="163" y="208" width="1280" height="800"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
                     </window>
                     <connections>
@@ -767,17 +767,17 @@
             <objects>
                 <viewController id="snT-1S-giJ" customClass="MsgViewController" customModule="BulletinBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9GD-dp-thi">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1280" height="800"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuU-sV-H1c">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1280" height="800"/>
                                 <clipView key="contentView" id="Bbh-kw-wzk">
-                                    <rect key="frame" x="1" y="1" width="478" height="268"/>
+                                    <rect key="frame" x="1" y="1" width="1278" height="798"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="S2i-6D-rr6">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1278" height="798"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="wjW-tI-FVX">
                                                 <size key="itemSize" width="300" height="50"/>
@@ -809,7 +809,7 @@
                 </viewController>
                 <customObject id="22e-Cq-uec" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="1507"/>
+            <point key="canvasLocation" x="75" y="2112"/>
         </scene>
     </scenes>
 </document>
