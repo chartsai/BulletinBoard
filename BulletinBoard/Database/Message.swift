@@ -10,24 +10,32 @@ import Cocoa
 
 public class Message: NSObject {
 
-    var keyValue = ""
-    var imageUrlValue = ""
-    var contentValue = ""
+    var fromValue: String
+    var timeValue: String
+    var imageUrlValue: String
+    var contentValue: String
 
-    public func setKey(key : String) {
-        self.keyValue = key
+    init(from: String, url: String, content: String, time: String) {
+        fromValue = from
+        imageUrlValue = url
+        contentValue = content
+        timeValue = time
     }
 
-    public func setimageUrl(url : String) {
-        self.imageUrlValue = url
+    public override func isEqual(object: AnyObject?) -> Bool {
+        let message = object as! Message
+
+        let selfString = fromValue + timeValue + imageUrlValue + contentValue
+        let anotherString = message.getFrom() + message.getTimestamp() + message.getimageUrl() + message.getContent()
+        return selfString == anotherString
     }
 
-    public func setContent(content : String) {
-        self.contentValue = content
+    func getTimestamp() -> String {
+        return self.timeValue
     }
 
-    public func getKey() -> String {
-        return self.keyValue
+    public func getFrom() -> String {
+        return self.fromValue
     }
 
     public func getimageUrl() -> String {
@@ -50,8 +58,10 @@ public class Message: NSObject {
             let content = list[key]
 
             let message = [
+                "from" : content!.getFrom(),
                 "imageUrl": content!.getimageUrl(),
-                "content" : content!.getContent()
+                "content" : content!.getContent(),
+                "time" : content!.getTimestamp()
             ]
             dictionaryList[key] = message
         }
@@ -66,11 +76,12 @@ public class Message: NSObject {
 
         for key in keys {
             let content = data[key]
-
-            let message = Message()
-            message.setKey(key)
-            message.setimageUrl(content!["imageUrl"]!)
-            message.setContent(content!["content"]!)
+            let message = Message(
+                from: content!["from"] ?? String(),
+                url: content!["imageUrl"]!,
+                content: content!["content"]!,
+                time: content!["time"] ?? String()
+            )
 
             messageList[key] = message
         }

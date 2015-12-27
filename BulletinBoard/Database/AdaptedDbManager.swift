@@ -31,11 +31,35 @@ public class AdaptedDbManager {
     }
 
     public func put(content: Message) {
-        messageList[Timestamp] = content
+        put(content.getFrom(), url: content.getimageUrl(), content: content.getContent())
+    }
+
+    public func put(from: String, url: String, content: String) {
+        put(from, url: url, content: content, time: Timestamp)
+    }
+
+    public func put(from: String, url: String, content: String, time: String) {
+        let message = Message(
+            from: from,
+            url: url,
+            content: content,
+            time: time
+        )
+        messageList[time] = message
     }
 
     public func delete(key: String) {
         messageList.removeValueForKey(key)
+    }
+
+    public func delete(message: Message) {
+        let sequence = messageList.enumerate()
+
+        for element in sequence {
+            if element.element.1.isEqual(message) {
+                delete(element.element.0)
+            }
+        }
     }
 
     public func getMessageSize() -> Int {

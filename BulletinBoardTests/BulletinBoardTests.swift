@@ -35,22 +35,29 @@ class BulletinBoardTests: XCTestCase {
         }
     }
 
+    
 
     func testGetPut() {
         let dbManager = AdaptedDbManager()
 
         let dictionaryList = [
             "ID_001": [
+                "from" : "user_01",
                 "imageUrl" : "image_01",
-                "content"  : "content_01"
+                "content"  : "content_01",
+                "time" : "123"
             ],
             "ID_002": [
+                "from" : "user_02",
                 "imageUrl" : "image_02",
-                "content"  : "content_02"
+                "content"  : "content_02",
+                "time" : "456"
             ],
             "ID_003": [
+                "from" : "user_03",
                 "imageUrl" : "image_03",
-                "content"  : "content_03"
+                "content"  : "content_03",
+                "time" : "789"
             ]
         ]
         let messageList = Message.fromDictionary(dictionaryList)
@@ -68,8 +75,9 @@ class BulletinBoardTests: XCTestCase {
         print(dbManager.getAll())
         print(dbManager.get("ID_001"))
 
-        dbManager.delete("ID_002")
+        dbManager.delete(dbManager.get("ID_001"))
         print(dbManager.getAll())
+        print("size : " + String(dbManager.getMessageSize()))
 
 //        dbManage.put(["First", "Second", "Third"])
 //        var data = dbManage.get()
